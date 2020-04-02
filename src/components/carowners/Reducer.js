@@ -25,6 +25,13 @@ export default (state = initState, action) => {
       };
     }
 
+    case (`${prefix}RESET_CAR_OWNERS`): {
+      return {
+        ...state,
+        carOwners: [],
+      };
+    }
+
     case (`${prefix}SET_LOADING`): {
       return {
         ...state,

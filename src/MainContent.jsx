@@ -14,7 +14,7 @@ class MainContent extends React.Component {
           <Route
             path="/:filterId"
             render={(props) => (
-              <CarOwners {...props} />
+              <CarOwners {...props} filterId={props.match.params.filterId} />
             )}
           />
 

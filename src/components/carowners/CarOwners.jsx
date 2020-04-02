@@ -5,7 +5,7 @@ import PropType from 'prop-types';
 import Axios from 'axios';
 import swal from 'sweetalert';
 import {
-  setCarOwners, setLoaded, setLoading, setLoadedMore, setLoadingMore, setFilter,
+  setCarOwners, setLoaded, setLoading, setLoadedMore, setLoadingMore, setFilter, resetCarOwners,
 } from './Actions';
 import CarOwner from './CarOwner';
 
@@ -13,13 +13,20 @@ class CarOwners extends React.Component {
   constructor(props) {
     super(props);
 
+    this._isMounted = false;
+    this.prevFilterId = null;
     this.onScroll = this.onScroll.bind(this);
     this.fetchCarOwners = this.fetchCarOwners.bind(this);
   }
 
   componentDidMount() {
+    this._isMounted = true;
     this.fetchCarOwners(true);
     window.addEventListener('scroll', this.onScroll);
+  }
+
+  componentWillUnmount() {
+    this._isMounted = false;
   }
 
   onScroll() {
@@ -38,40 +45,44 @@ class CarOwners extends React.Component {
   fetchCarOwners(firstFetch = false) {
     const { props } = this;
     const { state } = props;
-    console.log('props', props);
 
-    const { filterId } = props.match.params;
-    let proceed = false;
-    if (firstFetch) {
-      this.props.setLoading();
-      proceed = !state.loading;
-    } else {
-      this.props.setLoadingMore();
-      proceed = !state.loadingMore;
-    }
+    if (this._isMounted) {
+      const { filterId } = props.match.params;
+      let proceed = false;
+      let length = 0;
+      if (firstFetch) {
+        this.props.resetCarOwners();
+        this.props.setLoading();
+        proceed = !state.loading;
+      } else {
+        this.props.setLoadingMore();
+        proceed = !state.loadingMore;
+        length = this.props.state.carOwners.length;
+      }
 
-    if (proceed) {
-      const { length } = state.carOwners;
-      Axios({
-        url: `${process.env.REACT_APP_API_ENDPOINT}/car-owners/${filterId}?offset=${length}`,
-        method: 'GET',
-        timeout: 0,
-      }).then((response) => {
-        const { carOwners } = response.data.data;
-        console.log('carOwners is : ', carOwners);
+      if (proceed) {
+        Axios({
+          url: `${process.env.REACT_APP_API_ENDPOINT}/car-owners/${filterId}?offset=${length}`,
+          method: 'GET',
+          timeout: 0,
+        }).then((response) => {
+          if (this._isMounted) {
+            const { carOwners } = response.data.data;
 
-        props.setCarOwners(carOwners);
-        if (firstFetch) {
-          this.props.setLoaded();
-          const { filter } = response.data.data;
-          props.setFilter(filter);
-        } else {
-          this.props.setLoadedMore();
-        }
-      }).catch((error) => {
-        console.log(error);
-        swal('Error', 'an error occured please try again', 'error');
-      });
+            props.setCarOwners(carOwners);
+            if (firstFetch) {
+              const { filter } = response.data.data;
+              this.props.setLoaded();
+              props.setFilter(filter);
+            } else {
+              this.props.setLoadedMore();
+            }
+          }
+        }).catch((error) => {
+          console.log(error);
+          swal('Error', 'an error occured please try again', 'error');
+        });
+      }
     }
   }
 
@@ -110,7 +121,7 @@ class CarOwners extends React.Component {
               </div>
               <div className="filter">
                 <span className="label">gender : </span>
-                <span>{filter.gender}</span>
+                <span>{filter.gender || 'ALL GENDERS'}</span>
               </div>
               <div className="filter">
                 <span className="label">countries : </span>
@@ -146,6 +157,7 @@ const mapDispatchToProps = (dispatch) => ({
   setLoadingMore: () => dispatch(setLoadingMore()),
   setLoadedMore: () => dispatch(setLoadedMore()),
   setFilter: (filter) => dispatch(setFilter(filter)),
+  resetCarOwners: () => dispatch(resetCarOwners()),
 });
 
 CarOwners.propTypes = {

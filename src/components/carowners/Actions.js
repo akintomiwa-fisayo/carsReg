@@ -7,3 +7,4 @@ exports.setLoaded = () => ({ type: `${prefix}SET_LOADED` });
 exports.setLoadingMore = () => ({ type: `${prefix}SET_LOADING_MORE` });
 exports.setLoadedMore = () => ({ type: `${prefix}SET_LOADED_MORE` });
 exports.setFilter = (filter) => ({ type: `${prefix}SET_FILTER`, filter });
+exports.resetCarOwners = () => ({ type: `${prefix}RESET_CAR_OWNERS` });

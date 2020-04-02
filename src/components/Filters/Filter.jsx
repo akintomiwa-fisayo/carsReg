@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 class Filter extends React.Component {
@@ -31,12 +32,12 @@ class Filter extends React.Component {
     }
 
     return (
-      <div className="filter">
+      <NavLink to={`/${filter.id}`} className="filter">
         <h2 className="model-year">{filter.startYear} - {filter.endYear}</h2>
         <p className="gender">{filter.gender || 'ALL GENDERS'}</p>
         <div className="countries">{countries}</div>
         <div className="colors">  {colors}</div>
-      </div>
+      </NavLink>
     );
   }
 }
