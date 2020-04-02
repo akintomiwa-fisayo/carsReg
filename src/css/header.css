@@ -14,7 +14,7 @@ header .social {
   display: grid;
   grid-auto-flow: column;
   grid-gap: 1.4em;
-  font-size: 1.5em;
+  font-size: 1.1vw;
 }
 header .social span {
   color: white;

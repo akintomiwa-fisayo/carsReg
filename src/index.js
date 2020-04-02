@@ -1,7 +1,6 @@
 /* eslint-disable no-underscore-dangle */
 import React from 'react';
 import ReactDOM from 'react-dom';
-import axios from 'axios';
 import { Provider } from 'react-redux';
 import store from './redux/store';
 import App from './App';
@@ -10,8 +9,6 @@ import * as serviceWorker from './serviceWorker';
 ReactDOM.render(
   <Provider store={store}>
     <App />
-
-
   </Provider>,
   document.getElementById('root'),
 );
