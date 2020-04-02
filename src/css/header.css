@@ -1,0 +1,34 @@
+header {
+  background: #1d1d1d;
+  padding: 1em 2.2vw;
+  display: flex;
+  justify-content: space-between;
+}
+header .logo {
+  color: white;
+  font-family: 'logo';
+  font-size: 1.6vw;
+  line-height: 1;
+}
+header .social {
+  display: grid;
+  grid-auto-flow: column;
+  grid-gap: 1.4em;
+  font-size: 1.5em;
+}
+header .social span {
+  color: white;
+  cursor: pointer;
+}
+header .social span:hover.fa-facebook-f {
+  color: #4267b2;
+}
+header .social span:hover.fa-twitter {
+  color: #1d9dec;
+}
+header .social span:hover.fa-pinterest-p {
+  color: #e00022;
+}
+header .social span:hover.fa-instagram {
+  color: #ae2f8c;
+}

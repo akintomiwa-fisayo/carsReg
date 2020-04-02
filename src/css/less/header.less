@@ -1,0 +1,45 @@
+@import (reference) "./general.less";
+
+header{
+  background: rgb(29, 29, 29);
+  padding: 1em @pagePaddingLeft;
+  display: flex;
+  justify-content: space-between;
+  
+  .logo{
+    color: white;
+    font-family: 'logo';
+    font-size: 1.6vw;
+    line-height: 1;
+  }
+
+  .social{
+    display: grid;
+    grid-auto-flow: column;
+    grid-gap: 1.4em;
+    font-size: 1.5em;
+
+    span{
+      color: white;
+      cursor: pointer;
+
+      &:hover{
+        &.fa-facebook-f{
+          color: #4267b2;
+        }
+
+        &.fa-twitter{
+          color: #1d9dec;
+        }
+
+        &.fa-pinterest-p{
+          color: #e00022;
+        }
+
+        &.fa-instagram{
+          color: #ae2f8c;
+        }
+      }
+    }
+  }
+}
