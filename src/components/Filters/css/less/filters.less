@@ -1,9 +1,11 @@
 @import (reference) "../../../../css/less/general.less";
 
 [data-comp=filters]{
-  padding: 0px @pagePaddingLeft;
+  padding: 2em @pagePaddingLeft;
+  width: 70%;
 
   .label{
+    margin-top: 0;
     .material-icons{
       vertical-align: bottom;
     }
@@ -58,50 +60,11 @@
 
       span{
         font-weight: 700;
+
         &[data-color]{
           width: 1.5em;
           height: $width;
           border-radius: 99999px;
-
-          &[data-color=Green]{
-            background: #50af55;
-          }
-
-          &[data-color=Violet]{
-            background: #9c2fae;
-          }
-
-          &[data-color=Yellow]{
-            background: #f9c131;
-          }
-
-          &[data-color=Blue]{
-            background: #3e54b4;
-          }
-
-          &[data-color=Teal]{
-            background: #117f7e;
-          }
-
-          &[data-color=Maroon]{
-            background: #ae3361;
-          }
-
-          &[data-color=Red]{
-            background: #ec2b26;
-          }
-
-          &[data-color=Aquamarine]{
-            background: #84fed5;
-          }
-
-          &[data-color=Orange]{
-            background: #fb582f;
-          }
-
-          &[data-color=Mauv]{
-            background: #b685a5;
-          }
         }
       }
 

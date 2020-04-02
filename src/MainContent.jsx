@@ -2,7 +2,8 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import Filters from './components/Filters/Filters';
+import Filters from './components/filters/Filters';
+import CarOwners from './components/carowners/CarOwners';
 
 class MainContent extends React.Component {
   render() {
@@ -10,6 +11,13 @@ class MainContent extends React.Component {
     return (
       <div id="mainContent" style={{ minHeight: `calc(100vh - ${state.headerHeight}px` }}>
         <Switch>
+          <Route
+            path="/:filterId"
+            render={(props) => (
+              <CarOwners {...props} />
+            )}
+          />
+
           <Route
             path="/"
             render={(props) => (

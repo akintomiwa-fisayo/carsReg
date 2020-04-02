@@ -1,5 +1,9 @@
 [data-comp=filters] {
-  padding: 0px 2.2vw;
+  padding: 2em 2.2vw;
+  width: 70%;
+}
+[data-comp=filters] .label {
+  margin-top: 0;
 }
 [data-comp=filters] .label .material-icons {
   vertical-align: bottom;
@@ -53,34 +57,4 @@
   width: 1.5em;
   height: 1.5em;
   border-radius: 99999px;
-}
-[data-comp=filters] .filter .colors span[data-color][data-color=Green] {
-  background: #50af55;
-}
-[data-comp=filters] .filter .colors span[data-color][data-color=Violet] {
-  background: #9c2fae;
-}
-[data-comp=filters] .filter .colors span[data-color][data-color=Yellow] {
-  background: #f9c131;
-}
-[data-comp=filters] .filter .colors span[data-color][data-color=Blue] {
-  background: #3e54b4;
-}
-[data-comp=filters] .filter .colors span[data-color][data-color=Teal] {
-  background: #117f7e;
-}
-[data-comp=filters] .filter .colors span[data-color][data-color=Maroon] {
-  background: #ae3361;
-}
-[data-comp=filters] .filter .colors span[data-color][data-color=Red] {
-  background: #ec2b26;
-}
-[data-comp=filters] .filter .colors span[data-color][data-color=Aquamarine] {
-  background: #84fed5;
-}
-[data-comp=filters] .filter .colors span[data-color][data-color=Orange] {
-  background: #fb582f;
-}
-[data-comp=filters] .filter .colors span[data-color][data-color=Mauv] {
-  background: #b685a5;
 }

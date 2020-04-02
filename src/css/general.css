@@ -166,3 +166,33 @@ html body {
 html body * {
   box-sizing: border-box;
 }
+html body [data-color][data-color=Green] {
+  background: #50af55;
+}
+html body [data-color][data-color=Violet] {
+  background: #9c2fae;
+}
+html body [data-color][data-color=Yellow] {
+  background: #f9c131;
+}
+html body [data-color][data-color=Blue] {
+  background: #3e54b4;
+}
+html body [data-color][data-color=Teal] {
+  background: #117f7e;
+}
+html body [data-color][data-color=Maroon] {
+  background: #ae3361;
+}
+html body [data-color][data-color=Red] {
+  background: #ec2b26;
+}
+html body [data-color][data-color=Aquamarine] {
+  background: #84fed5;
+}
+html body [data-color][data-color=Orange] {
+  background: #fb582f;
+}
+html body [data-color][data-color=Mauv] {
+  background: #b685a5;
+}

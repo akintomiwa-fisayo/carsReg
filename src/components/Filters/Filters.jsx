@@ -51,11 +51,9 @@ class Filters extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    state: state.Filters,
-  };
-};
+const mapStateToProps = (state) => ({
+  state: state.Filters,
+});
 
 const mapDispatchToProps = (dispatch) => ({
   setFilters: (filters) => dispatch(setFilters(filters)),

@@ -1,0 +1,160 @@
+@import (reference) "../../../../css/less/general.less";
+
+[data-comp=car-owners]{
+  padding: 2em @pagePaddingLeft;
+  width: 70%;
+
+  .header{
+    margin-bottom: 1em;
+
+    h1{
+      margin:0;
+    }
+
+    .filters{
+      padding: 1em;
+
+      .container{
+        background: #f3f3f3;
+        border: solid 1px #e1e1e1;
+        padding: 1em;
+        border-radius: .5em;
+        display: grid;
+        grid-gap: 1em;
+
+        .head{
+          margin: 0;
+            .material-icons{
+              vertical-align: bottom;
+            }
+          }
+        }
+  
+        .filter{
+          .label{
+            font-weight: 900;
+          }
+        }
+      }
+    }
+
+  }
+
+  .car-owner{
+    background: white;
+    display: flex;
+    align-items: center;
+    padding: 1.5em;
+    box-shadow: 0px 0px .3em #b6b6b6;
+    border-radius: .8vw;
+    margin-bottom: 2em;
+    cursor: pointer;
+    
+    .car{
+      display: flex;
+      width: 30%;
+      box-shadow: 0px 0px .3em #b6b6b6;
+      border-radius: 1.5vw;
+      background: #f6f6f6;
+      overflow: hidden;
+
+      img{
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        object-position: center;
+      }
+    }
+    
+    .details{
+      display: grid;
+      grid-auto-rows: max-content;
+      grid-gap: 1em;
+      width: 70%;
+      text-align: left;
+      padding-left: 1.2em;
+      
+      .label{
+        color: #aaaaaa;
+        font-weight: 300;
+        text-transform: capitalize;
+      }
+      
+      .name{
+        text-transform: capitalize;
+        font-weight: 500;
+        margin: 0;
+      }
+      
+      .group{
+        text-transform: capitalize;
+        display: flex;
+        width: max-content;
+
+        div{
+          display: flex;
+          flex-direction: column;
+          padding: 0 1em;
+
+          >:nth-child(1){
+            margin-bottom: .5em;
+          }
+
+          &:nth-child(1){
+            padding-left: 0;
+          }
+
+        }
+        
+        &.divider{
+          div{
+            border-right: solid 1px;
+
+            &:last-child{
+              border-right: 0;
+            }
+          }
+        }
+      }
+
+      .bio,.email{
+        display: flex;
+        overflow: hidden;
+        
+        .label{
+          margin-right: .5em;
+        }
+      }
+
+      .bio{
+          
+        >:nth-child(2){
+          display: block;
+          white-space: nowrap; 
+          word-break: normal;
+          word-wrap: normal;
+          text-overflow: ellipsis;
+          overflow: hidden;
+        }
+        
+      }
+      
+      [data-color]{
+        width: 1.5em;
+        height: $width;
+        border-radius: 99999px;
+      }
+       
+    }
+        
+  }
+
+  #loadMore{
+    #loader;
+    .icon{
+      margin: 0;
+    }
+  }
+  
+  
+}
