@@ -2,7 +2,7 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import Filters from './components/filters/Filters';
+import Filters from './components/Filters/Filters';
 import CarOwners from './components/carowners/CarOwners';
 
 class MainContent extends React.Component {
