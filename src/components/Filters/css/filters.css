@@ -1,0 +1,62 @@
+[data-comp=filters] {
+  padding: 2em 2.2vw;
+  width: 70%;
+}
+[data-comp=filters] .label {
+  margin-top: 0;
+}
+[data-comp=filters] .label .material-icons {
+  vertical-align: bottom;
+}
+[data-comp=filters] .filter {
+  background: white;
+  display: grid;
+  grid-gap: 1.3em;
+  padding: 1.5em;
+  grid-auto-flow: row;
+  text-align: center;
+  box-shadow: 0px 0px 0.3em #b6b6b6;
+  border-radius: 0.8vw;
+  margin-bottom: 2em;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+[data-comp=filters] .filter .model-year {
+  font-size: 1.6em;
+  font-weight: 700;
+  margin: 0;
+}
+[data-comp=filters] .filter .gender {
+  margin: 0;
+  text-transform: capitalize;
+}
+[data-comp=filters] .filter .countries {
+  display: grid;
+  grid-gap: 0.5em;
+  grid-auto-flow: column;
+  grid-auto-columns: max-content;
+  justify-content: center;
+}
+[data-comp=filters] .filter .countries span {
+  text-transform: capitalize;
+  background: #d0d0d0;
+  padding: 0.3em 0.5em;
+  font-family: 'Comic Neue', cursive;
+  border-radius: 99999px;
+}
+[data-comp=filters] .filter .colors {
+  display: grid;
+  grid-gap: 1em;
+  grid-auto-flow: column;
+  grid-auto-columns: max-content;
+  justify-content: center;
+}
+[data-comp=filters] .filter .colors span {
+  font-weight: 700;
+}
+[data-comp=filters] .filter .colors span[data-color] {
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 99999px;
+}

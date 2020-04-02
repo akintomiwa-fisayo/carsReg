@@ -1,0 +1,77 @@
+@import (reference) "../../../../css/less/general.less";
+
+[data-comp=filters]{
+  padding: 2em @pagePaddingLeft;
+  width: 70%;
+
+  .label{
+    margin-top: 0;
+    .material-icons{
+      vertical-align: bottom;
+    }
+  }
+
+  .filter{
+    background: white;
+    display: grid;
+    grid-gap: 1.3em;
+    padding: 1.5em;
+    grid-auto-flow: row;
+    text-align: center;
+    box-shadow: 0px 0px .3em #b6b6b6;
+    border-radius: .8vw;
+    margin-bottom: 2em;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    
+    .model-year{
+      font-size: 1.6em;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    .gender{
+      margin: 0;
+      text-transform: capitalize;
+    }
+    
+    .countries{
+      display: grid;
+      grid-gap: .5em;
+      grid-auto-flow: column;
+      grid-auto-columns: max-content;
+      justify-content: center;
+      
+      span{
+        text-transform: capitalize;
+        background: #d0d0d0;
+        padding: .3em .5em;
+        font-family: 'Comic Neue', cursive;;
+        border-radius: 99999px;
+      }
+    }
+    
+    .colors{
+      display: grid;
+      grid-gap: 1em;
+      grid-auto-flow: column;
+      grid-auto-columns: max-content;
+      justify-content: center;
+  
+
+      span{
+        font-weight: 700;
+
+        &[data-color]{
+          width: 1.5em;
+          height: $width;
+          border-radius: 99999px;
+        }
+      }
+
+    }
+  }
+  
+  
+}
